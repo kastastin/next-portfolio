@@ -15,7 +15,7 @@ export default function Template({ children }) {
     <>
       <motion.main
         animate="enter"
-        initial="hidden"
+        initial="visible"
         variants={variants}
         transition={{ type: "linear", delay: 0.2, duration: 0.4 }}
       >
