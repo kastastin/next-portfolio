@@ -15,7 +15,7 @@ import Socials from "./Socials";
 export default function Hero() {
   return (
     <section className="h-[45rem] bg-hero bg-cover bg-no-repeat py-8 dark:bg-none sm:h-[37rem] md:h-[35rem] xl:py-12 xl:pt-16">
-      <div className="container mx-auto">
+      <div className="container relative mx-auto">
         <div className="flex justify-between gap-x-8">
           <div className="mx-auto flex max-w-[600px] flex-col justify-center text-center xl:mx-0 xl:text-left">
             <div className="mb-4 text-sm font-semibold uppercase tracking-[4px] text-primary">
@@ -36,7 +36,10 @@ export default function Hero() {
                 </Button>
               </Link>
 
-              <Button variant="secondary" className="gap-x-2" disabled>
+              <Button
+                variant="secondary"
+                className="cursor-not-allowed gap-x-2"
+              >
                 Download CV
                 <Download size={18} />
               </Button>
@@ -61,7 +64,7 @@ export default function Hero() {
               icon={<RiTodoFill />}
               endCountNum={9}
               badgeText="Finished Projects"
-              containerStyles="absolute -left-[0.5rem] top-[80%]"
+              containerStyles="absolute -left-[1rem] top-[80%]"
             />
 
             <Badge
@@ -73,13 +76,17 @@ export default function Hero() {
 
             <div className="absolute -right-5 -top-1 size-[500px] bg-hero_shape2_light bg-no-repeat dark:bg-hero_shape2_dark" />
 
-            <DevImg imgSrc="/hero/developer.svg" />
+            <DevImg
+              imgSrc="/hero/developer.svg"
+              imgStyles="translate-x-[-25px]"
+              containerStyles="relative h-[462px] w-[510px] bg-hero_shape bg-no-repeat"
+            />
           </div>
         </div>
 
         {/* Icon: Arrow Down  */}
-        <div className="absolute bottom-4 left-2/4 hidden animate-bounce cursor-pointer xl:flex">
-          <RiArrowDownSLine className="text-3xl text-primary" />
+        <div className="absolute -bottom-4 left-2/4 hidden animate-bounce cursor-pointer xl:flex">
+          <RiArrowDownSLine className="translate-x-[-50%] text-3xl text-primary" />
         </div>
       </div>
     </section>

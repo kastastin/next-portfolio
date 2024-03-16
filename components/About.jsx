@@ -102,5 +102,71 @@ const skillsData = [
 ];
 
 export default function About() {
-  return <div>about section</div>;
+  function getData(arr, title) {
+    return arr.find((item) => item.title === title).data;
+  }
+
+  return (
+    <section className="pb-12 xl:h-[860px] xl:py-24">
+      <div className="container mx-auto">
+        <h2 className="section-title mx-auto mb-8 text-center xl:mb-16">
+          About me
+        </h2>
+
+        {/* Content */}
+        <div className="flex flex-col xl:flex-row">
+          {/* Image */}
+          <div className="relative hidden flex-1 xl:flex">
+            <DevImg
+              imgSrc="/about/developer.svg"
+              imgStyles="translate-x-[5px]"
+              containerStyles="relative size-[505px] bg-about_shape_light bg-no-repeat dark:bg-about_shape_dark"
+            />
+          </div>
+
+          {/* Tabs */}
+          <div className="flex-1">
+            <Tabs defaultValue="personal">
+              <TabsList className="grid w-full dark:border-none sm:mx-auto sm:max-w-[520px] sm:grid-cols-3 sm:border">
+                {/* Personal info content */}
+                <TabsTrigger
+                  className="mx-auto w-[162px] xl:w-auto"
+                  value="personal"
+                >
+                  Personal Info
+                </TabsTrigger>
+
+                {/* Qualifications info content */}
+                <TabsTrigger
+                  className="mx-auto w-[162px] xl:w-auto"
+                  value="qualifications"
+                >
+                  Qualifications
+                </TabsTrigger>
+
+                {/* Skills info content */}
+                <TabsTrigger
+                  className="mx-auto w-[162px] xl:w-auto"
+                  value="skills"
+                >
+                  Skills
+                </TabsTrigger>
+              </TabsList>
+
+              {/* Tabs content */}
+              <div className="mt-12 text-lg xl:mt-8">
+                <TabsContent value="personal">Personal info</TabsContent>
+
+                <TabsContent value="qualifications">
+                  Qualifications info
+                </TabsContent>
+
+                <TabsContent value="skills">Skills info</TabsContent>
+              </div>
+            </Tabs>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }
