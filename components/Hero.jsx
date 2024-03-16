@@ -14,19 +14,21 @@ import Socials from "./Socials";
 
 export default function Hero() {
   return (
-    <section className="bg-hero h-[84vh] bg-cover bg-no-repeat py-12 dark:bg-none xl:py-24 xl:pt-28">
+    <section className="h-[45rem] bg-hero bg-cover bg-no-repeat py-8 dark:bg-none sm:h-[37rem] md:h-[35rem] xl:py-12 xl:pt-16">
       <div className="container mx-auto">
         <div className="flex justify-between gap-x-8">
           <div className="mx-auto flex max-w-[600px] flex-col justify-center text-center xl:mx-0 xl:text-left">
             <div className="mb-4 text-sm font-semibold uppercase tracking-[4px] text-primary">
               Web Developer
             </div>
-            <h1 className="h1 mb-4">Hello, my name is Kostya</h1>
+            <h1 className="h1 mb-4">Hello, my name is Konstantin</h1>
             <p className="subtitle mx-auto max-w-[490px] xl:mx-0">
-              Bried description with insights inro myself, my vocational journey
-              and what I engage in professionally.
+              I&apos;m a web-developer from Kyiv. My main area of expertise is
+              website layout. I specialize in creating aesthetic and functional
+              interfaces for web projects.
             </p>
 
+            {/* Buttons */}
             <div className="mx-auto mb-12 flex flex-col gap-x-3 gap-y-3 md:flex-row xl:mx-0">
               <Link href="/contact">
                 <Button className="gap-x-2">
@@ -39,12 +41,20 @@ export default function Hero() {
                 <Download size={18} />
               </Button>
             </div>
+
+            <Socials />
           </div>
 
-          <div className="relative hidden xl:flex">image</div>
+          {/* Image */}
+          <div className="relative hidden xl:flex">
+            <div className="absolute -right-10 -top-1 size-[500px] bg-hero_shape2_light bg-no-repeat dark:bg-hero_shape2_dark" />
+
+            <DevImg imgSrc="/hero/developer.svg" />
+          </div>
         </div>
 
-        <div className="absolute bottom-44 left-2/4 hidden animate-bounce md:flex xl:bottom-12">
+        {/* Icon: Arrow Down  */}
+        <div className="absolute bottom-4 left-2/4 hidden animate-bounce cursor-pointer xl:flex">
           <RiArrowDownSLine className="text-3xl text-primary" />
         </div>
       </div>
