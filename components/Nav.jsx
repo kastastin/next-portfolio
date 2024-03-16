@@ -8,16 +8,22 @@ const navLinks = [
   { label: "Contact", href: "/contact" },
 ];
 
-export default function Nav() {
+export default function Nav({
+  containerStyles,
+  linkStyles,
+  underlineStyles,
+  onLink,
+}) {
   const currentPath = usePathname();
 
   return (
-    <nav className="hidden items-center gap-x-8 xl:flex">
+    <nav className={containerStyles}>
       {navLinks.map((link) => (
         <Link
           href={link.href}
           key={link.label}
-          className="relative transition-all hover:text-primary"
+          onClick={onLink}
+          className={`${linkStyles} ${link.href === currentPath && "text-primary"}`}
         >
           {link.href === currentPath && (
             <motion.span
@@ -25,7 +31,7 @@ export default function Nav() {
               initial={{ y: "-100%" }}
               transition={{ type: "tween" }}
               layoutId="underline"
-              className="absolute bottom-0 h-1 w-full bg-primary"
+              className={underlineStyles}
             />
           )}
 

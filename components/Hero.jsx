@@ -36,34 +36,37 @@ export default function Hero() {
                 </Button>
               </Link>
 
-              <Button variant="secondary" className="gap-x-2">
+              <Button variant="secondary" className="gap-x-2" disabled>
                 Download CV
                 <Download size={18} />
               </Button>
             </div>
 
-            <Socials />
+            <Socials
+              containerStyles="mx-auto flex gap-x-6 xl:mx-0"
+              iconStyles="text-[22px] text-foreground transition-all hover:text-primary"
+            />
           </div>
 
           {/* Image */}
           <div className="relative hidden xl:flex">
             <Badge
               icon={<RiBriefcase4Fill />}
-              endCountNum={2}
-              badgeText="Years Of Experience"
+              endCountNum={12}
+              badgeText="Months Of Experience"
               containerStyles="absolute -left-[5rem] top-[22.5%]"
             />
 
             <Badge
               icon={<RiTodoFill />}
-              endCountNum={12}
+              endCountNum={9}
               badgeText="Finished Projects"
               containerStyles="absolute -left-[0.5rem] top-[80%]"
             />
 
             <Badge
               icon={<RiTeamFill />}
-              endCountNum={8}
+              endCountNum={6}
               badgeText="Happy Clients"
               containerStyles="absolute -right-2 top-[2%]"
             />

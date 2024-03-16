@@ -3,43 +3,50 @@
 import Link from "next/link";
 import {
   RiGithubFill,
-  RiYoutubeFill,
   RiLinkedinFill,
   RiFacebookFill,
   RiInstagramFill,
+  RiTelegramFill,
 } from "react-icons/ri";
 
 const icons = [
   {
-    href: "/",
+    href: "https://github.com/kastastin",
     name: <RiGithubFill />,
   },
   {
-    href: "/",
-    name: <RiYoutubeFill />,
-  },
-  {
-    href: "/",
+    href: "https://www.linkedin.com/in/kastastin/",
     name: <RiLinkedinFill />,
   },
   {
-    href: "/",
+    href: "https://www.instagram.com/kastast.in/",
+    name: <RiInstagramFill />,
+  },
+  {
+    href: "https://www.facebook.com/kostya.klymovych.9/",
     name: <RiFacebookFill />,
   },
   {
-    href: "/",
-    name: <RiInstagramFill />,
+    href: "https://t.me/kastastin",
+    name: <RiTelegramFill />,
   },
 ];
 
-export default function Socials() {
+export default function Socials({
+  containerStyles,
+  iconStyles,
+  onSocialClick,
+}) {
   return (
-    <div className="mx-auto flex gap-x-6 xl:mx-0">
+    <div className={containerStyles}>
       {icons.map((icon, index) => (
-        <Link href={icon.href} key={index}>
-          <div className="text-[22px] text-foreground transition-all hover:text-primary">
-            {icon.name}
-          </div>
+        <Link
+          href={icon.href}
+          key={index}
+          onClick={onSocialClick}
+          target="_blank"
+        >
+          <div className={iconStyles}>{icon.name}</div>
         </Link>
       ))}
     </div>
