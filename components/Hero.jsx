@@ -47,7 +47,28 @@ export default function Hero() {
 
           {/* Image */}
           <div className="relative hidden xl:flex">
-            <div className="absolute -right-10 -top-1 size-[500px] bg-hero_shape2_light bg-no-repeat dark:bg-hero_shape2_dark" />
+            <Badge
+              icon={<RiBriefcase4Fill />}
+              endCountNum={2}
+              badgeText="Years Of Experience"
+              containerStyles="absolute -left-[5rem] top-[22.5%]"
+            />
+
+            <Badge
+              icon={<RiTodoFill />}
+              endCountNum={12}
+              badgeText="Finished Projects"
+              containerStyles="absolute -left-[0.5rem] top-[80%]"
+            />
+
+            <Badge
+              icon={<RiTeamFill />}
+              endCountNum={8}
+              badgeText="Happy Clients"
+              containerStyles="absolute -right-2 top-[2%]"
+            />
+
+            <div className="absolute -right-5 -top-1 size-[500px] bg-hero_shape2_light bg-no-repeat dark:bg-hero_shape2_dark" />
 
             <DevImg imgSrc="/hero/developer.svg" />
           </div>
