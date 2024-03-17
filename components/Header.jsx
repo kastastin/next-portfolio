@@ -27,7 +27,7 @@ export default function Header() {
 
   return (
     <header
-      className={`${headerStyles} sticky top-0 z-30 py-2 transition-all sm:py-5 ${currentPath === "/" && "bg-[#fef9f5]"}`}
+      className={`${headerStyles} sticky top-0 z-30 bg-[#fef9f5] py-2 transition-all sm:py-5`}
     >
       <div className="container mx-auto">
         <div className="flex items-center justify-between">

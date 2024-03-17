@@ -22,7 +22,8 @@ export default function Work() {
           </h2>
 
           <p className="subtitle mb-8">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Dive into a showcase of my recent work and witness the fusion of
+            creativity and expertise.
           </p>
 
           <Link href="/projects">
