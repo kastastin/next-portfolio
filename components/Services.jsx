@@ -31,7 +31,7 @@ const servicesData = [
 
 export default function Services() {
   return (
-    <section className="mb-12 xl:mb-36">
+    <section className="mb-12 xl:mb-16">
       <div className="container mx-auto">
         <h2 className="section-title-center">My Services</h2>
 

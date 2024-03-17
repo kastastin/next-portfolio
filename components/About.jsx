@@ -111,7 +111,7 @@ export default function About() {
   }
 
   return (
-    <section className="pb-12 pt-16 xl:h-[860px] xl:py-24">
+    <section className="pb-8 pt-16 max-xl:mb-20 xl:h-[860px] xl:py-24">
       <div className="container mx-auto">
         <h2 className="section-title-center">About me</h2>
 
