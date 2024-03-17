@@ -64,12 +64,24 @@
   @apply text-6xl font-bold tracking-[-2px] xl:leading-[80px];
 }
 
+.h2 {
+  @apply text-4xl font-bold;
+}
+
+.h3 {
+  @apply text-3xl font-bold;
+}
+
+.h4 {
+  @apply text-[22px] font-semibold;
+}
+
 .subtitle {
   @apply mb-8 text-lg font-light text-muted-foreground;
 }
 
 .section-title {
-  @apply before:bg-dots_light before:dark:bg-dots_dark relative flex w-max items-center justify-between gap-x-3 text-4xl font-bold before:size-[24px] before:bg-center before:bg-no-repeat;
+  @apply relative flex w-max items-center justify-between gap-x-3 text-4xl font-bold before:size-[24px] before:bg-dots_light before:bg-center before:bg-no-repeat before:dark:bg-dots_dark;
 }
 
 .badge {
