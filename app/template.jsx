@@ -27,7 +27,7 @@ export default function Template({ children }) {
         style={{ transform: `translateY(${completion - 100}%)` }}
       />
 
-      <div className="h-[4000px]" />
+      {/* <div className="h-[4000px]" /> */}
     </>
   );
 }
