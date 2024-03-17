@@ -6,93 +6,10 @@ import { Pagination } from "swiper/modules";
 
 import { Button } from "./ui/button";
 import ProjectCard from "./ProjectCard";
+import { projects } from "@/data/projects";
 
 import "swiper/css";
 import "swiper/css/pagination";
-
-const projectsData = [
-  {
-    name: "Example name",
-    category: "react js",
-    image: "/work/3.png",
-    link: "/",
-    github: "/",
-    description:
-      "Loremipsum dolor sit amet consectetur adipisicing elit. Cumque, quis.",
-  },
-  {
-    name: "Duno name",
-    category: "react js",
-    image: "/work/4.png",
-    link: "/",
-    github: "/",
-    description:
-      "Loremipsum dolor sit amet consectetur adipisicing elit. Cumque, quis.",
-  },
-  {
-    name: "Colid name",
-    category: "next js",
-    image: "/work/2.png",
-    link: "/",
-    github: "/",
-    description:
-      "Loremipsum dolor sit amet consectetur adipisicing elit. Cumque, quis.",
-  },
-  {
-    name: "Promet name",
-    category: "next js",
-    image: "/work/1.png",
-    link: "/",
-    github: "/",
-    description:
-      "Loremipsum dolor sit amet consectetur adipisicing elit. Cumque, quis.",
-  },
-  {
-    name: "Atoca name",
-    category: "next js",
-    image: "/work/3.png",
-    link: "/",
-    github: "/",
-    description:
-      "Loremipsum dolor sit amet consectetur adipisicing elit. Cumque, quis.",
-  },
-  {
-    name: "Lumina name",
-    category: "next js",
-    image: "/work/4.png",
-    link: "/",
-    github: "/",
-    description:
-      "Loremipsum dolor sit amet consectetur adipisicing elit. Cumque, quis.",
-  },
-  {
-    name: "Pokib name",
-    category: "fullstack",
-    image: "/work/1.png",
-    link: "/",
-    github: "/",
-    description:
-      "Loremipsum dolor sit amet consectetur adipisicing elit. Cumque, quis.",
-  },
-  {
-    name: "Ignite name",
-    category: "fullstack",
-    image: "/work/3.png",
-    link: "/",
-    github: "/",
-    description:
-      "Loremipsum dolor sit amet consectetur adipisicing elit. Cumque, quis.",
-  },
-  {
-    name: "Toroto name",
-    category: "fullstack",
-    image: "/work/2.png",
-    link: "/",
-    github: "/",
-    description:
-      "Loremipsum dolor sit amet consectetur adipisicing elit. Cumque, quis.",
-  },
-];
 
 export default function Work() {
   return (
@@ -128,7 +45,7 @@ export default function Work() {
             pagination={{ clickable: true }}
           >
             {/* First 4 projects */}
-            {projectsData.slice(0, 4).map((project) => (
+            {projects.slice(0, 4).map((project) => (
               <SwiperSlide key={project.name}>
                 <ProjectCard project={project} />
               </SwiperSlide>

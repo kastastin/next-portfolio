@@ -22,11 +22,15 @@ export default function ProjectCard({ project }) {
 
           {/* Links */}
           <div className="flex gap-x-4">
-            <Link href={project.link} className="project-link">
+            <Link href={project.link} target="_blank" className="project-link">
               <Link2Icon className=" text-white" />
             </Link>
 
-            <Link href={project.github} className="project-link">
+            <Link
+              href={project.github}
+              target="_blank"
+              className="project-link"
+            >
               <Github className="text-white" />
             </Link>
           </div>
