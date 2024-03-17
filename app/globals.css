@@ -85,7 +85,7 @@
 }
 
 .section-title-center {
-  @apply section-title section-title mx-auto mb-8 text-center xl:mb-16;
+  @apply section-title mx-auto mb-8 text-center xl:mb-16;
 }
 
 .badge {
