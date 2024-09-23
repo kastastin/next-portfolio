@@ -1,19 +1,19 @@
+import Cta from "@/components/Cta";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
-import Services from "@/components/Services";
-import Work from "@/components/Work";
-import Reviews from "@/components/Reviews";
-import Cta from "@/components/Cta";
+import WorksSection from "@/components/sections/WorksSection";
+import ReviewsSection from "@/components/sections/ReviewsSection";
+import ServicesSection from "@/components/sections/ServicesSection";
 
-export default function HomePage() {
-  return (
-    <main>
-      <Hero />
-      <About />
-      <Services />
-      <Work />
-      <Reviews />
-      <Cta />
-    </main>
-  );
-}
+const HomePage = () => (
+  <main>
+    <Hero />
+    <About />
+    <ServicesSection />
+    <WorksSection />
+    <ReviewsSection />
+    <Cta />
+  </main>
+);
+
+export default HomePage;

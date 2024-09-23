@@ -2,14 +2,13 @@
 
 import { useTheme } from "next-themes";
 import { SunIcon, MoonIcon } from "@radix-ui/react-icons";
-import { Button } from "./ui/button";
 
-export default function ThemeToggler() {
+import { Button } from "@/components/ui/button";
+
+const ThemeToggler = () => {
   const { theme, setTheme } = useTheme();
 
-  function buttonHandler() {
-    setTheme(theme === "dark" ? "light" : "dark");
-  }
+  const buttonHandler = () => setTheme(theme === "dark" ? "light" : "dark");
 
   return (
     <Button variant="outline" size="icon" onClick={buttonHandler}>
@@ -19,3 +18,5 @@ export default function ThemeToggler() {
     </Button>
   );
 }
+
+export default ThemeToggler;

@@ -1,27 +1,30 @@
 import { Outfit } from "next/font/google";
 
-import ThemeProvider from "@/components/ThemeProvider";
-import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Header from "@/components/Header";
+import ThemeProvider from "@/components/ThemeProvider";
+
 import "./globals.css";
 
 const outfit = Outfit({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Kastastin | Portfolio",
-  description: "Simple site to showcase my work and skills as web developer.",
+  description:
+    "Explore my portfolio, showcasing my skills and projects as a web developer. Designed with Next.js and Tailwind CSS, this site highlights my expertise in creating dynamic and responsive web applications. Discover my work and get in touch!",
+  icons: { icon: "/logo.svg" },
 };
 
-export default function RootLayout({ children }) {
-  return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={outfit.className}>
-        <ThemeProvider attribute="class" defaulTheme="light">
-          <Header />
-          {children}
-          <Footer />
-        </ThemeProvider>
-      </body>
-    </html>
-  );
-}
+const RootLayout = ({ children }) => (
+  <html lang="en" suppressHydrationWarning>
+    <body className={outfit.className}>
+      <ThemeProvider attribute="class" defaulTheme="light">
+        <Header />
+        {children}
+        <Footer />
+      </ThemeProvider>
+    </body>
+  </html>
+);
+
+export default RootLayout;

@@ -10,7 +10,7 @@ import {
 import { Button } from "./ui/button";
 import DevImg from "./DevImg";
 import Badge from "./Badge";
-import Socials from "./Socials";
+import SocialIconsList from "@/components/lists/SocialIconsList";
 
 export default function Hero() {
   return (
@@ -31,7 +31,7 @@ export default function Hero() {
             </p>
 
             {/* Buttons */}
-            <div className="mx-auto mb-8 flex flex-col gap-x-3 gap-y-3 md:flex-row xl:mx-0 xl:mb-12">
+            <div className="mx-auto mb-8 flex flex-col gap-3 md:flex-row xl:mx-0 xl:mb-12">
               <Link href="/contact">
                 <Button className="gap-x-2">
                   Contact me <Send size={18} />
@@ -47,7 +47,7 @@ export default function Hero() {
               </Button>
             </div>
 
-            <Socials
+            <SocialIconsList
               containerStyles="mx-auto flex gap-x-6 xl:mx-0"
               iconStyles="text-[22px] text-foreground transition-all hover:text-primary"
             />

@@ -1,7 +1,9 @@
 "use client";
 
-import { ThemeProvider as NextThemeProvider } from "next-themes";
+import { ThemeProvider as Provider } from "next-themes";
 
-export default function ThemeProvider({ children, ...props }) {
-  return <NextThemeProvider {...props}>{children}</NextThemeProvider>;
-}
+const ThemeProvider = ({ children, ...props }) => (
+  <Provider {...props}>{children}</Provider>
+);
+
+export default ThemeProvider;

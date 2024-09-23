@@ -1,22 +1,25 @@
-import { useState, useEffect } from "react";
+import { throttle } from "lodash";
+import { useEffect, useState } from "react";
 
-export function useScrollProgress() {
+export const useScrollProgress = () => {
   const [completion, setCompletion] = useState(0);
 
   useEffect(() => {
-    function updateScrollCompletion() {
+    const updateScrollCompletion = () => {
       const currentScroll = window.scrollY;
       const scrollHeight = document.body.scrollHeight - window.innerHeight;
 
       if (scrollHeight) {
         setCompletion(Number(currentScroll / scrollHeight).toFixed(2) * 100);
       }
-    }
+    };
 
-    window.addEventListener("scroll", updateScrollCompletion);
+    const throttledScroll = throttle(updateScrollCompletion, 300);
 
-    return () => window.removeEventListener("scroll", updateScrollCompletion);
+    window.addEventListener("scroll", throttledScroll);
+
+    return () => window.removeEventListener("scroll", throttledScroll);
   }, []);
 
   return completion;
-}
+};

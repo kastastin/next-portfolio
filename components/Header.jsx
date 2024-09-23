@@ -1,16 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
 
-import Logo from "./Logo";
 import Nav from "./Nav";
+import Logo from "./Logo";
 import MobileNav from "./MobileNav";
 import ThemeToggler from "./ThemeToggler";
 
 export default function Header() {
-  const currentPath = usePathname();
-
   const [isHeaderVisible, setIsHeaderVisible] = useState(false);
 
   useEffect(() => {

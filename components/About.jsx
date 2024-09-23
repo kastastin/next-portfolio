@@ -129,23 +129,20 @@ export default function About() {
           {/* Tabs */}
           <div className="flex-1">
             <Tabs defaultValue="personal">
-              <TabsList className="mx-auto grid w-full place-content-center dark:border-none sm:mx-auto sm:max-w-[520px] sm:grid-cols-3 sm:border">
+              <TabsList variant="about">
                 <TabsTrigger
-                  className="sm-auto w-[162px] xl:w-auto"
                   value="personal"
                 >
                   Personal Info
                 </TabsTrigger>
 
                 <TabsTrigger
-                  className="sm-auto w-[162px] xl:w-auto"
                   value="skills"
                 >
                   Skills
                 </TabsTrigger>
 
                 <TabsTrigger
-                  className="sm-auto w-[162px] xl:w-auto"
                   value="qualifications"
                 >
                   Qualifications

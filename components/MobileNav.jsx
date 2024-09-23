@@ -5,7 +5,7 @@ import { AlignJustify } from "lucide-react";
 
 import Nav from "./Nav";
 import Logo from "./Logo";
-import Socials from "./Socials";
+import SocialIconsList from "@/components/lists/SocialIconsList";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 export default function MobileNav() {
@@ -35,7 +35,7 @@ export default function MobileNav() {
             />
           </div>
 
-          <Socials
+          <SocialIconsList
             containerStyles="flex gap-x-4"
             iconStyles="text-2xl transition-all hover:text-primary"
             onSocialClick={closeMenu}
