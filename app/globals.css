@@ -76,6 +76,10 @@
   @apply text-[22px] font-semibold;
 }
 
+.h4-skills {
+  @apply mb-2 text-xl font-semibold;
+}
+
 .subtitle {
   @apply mb-8 text-lg font-light text-muted-foreground;
 }
@@ -90,6 +94,10 @@
 
 .flex-center {
   @apply flex items-center justify-center;
+}
+
+.form-input {
+  @apply relative flex items-center;
 }
 
 .badge {

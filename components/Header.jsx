@@ -1,21 +1,27 @@
 "use client";
 
+import { throttle } from "lodash";
 import { useEffect, useState } from "react";
 
-import Nav from "./Nav";
-import Logo from "./Logo";
-import MobileNav from "./MobileNav";
-import ThemeToggler from "./ThemeToggler";
+import Nav from "@/components/Nav";
+import Logo from "@/components/Logo";
+import MobileNav from "@/components/MobileNav";
+import ThemeToggler from "@/components/ThemeToggler";
 
-export default function Header() {
+const Header = () => {
   const [isHeaderVisible, setIsHeaderVisible] = useState(false);
 
   useEffect(() => {
-    const scrollListener = window.addEventListener("scroll", () => {
+    const handleScroll = throttle(() => {
       setIsHeaderVisible(window.scrollY > 50);
-    });
+    }, 300);
 
-    return () => window.removeEventListener("scroll", scrollListener);
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      handleScroll.cancel();
+    };
   }, []);
 
   const headerStyles = isHeaderVisible
@@ -24,7 +30,7 @@ export default function Header() {
 
   return (
     <header
-      className={`${headerStyles} sticky top-0 z-30 bg-[#fef9f5] py-2 transition-all sm:py-5`}
+      className={`sticky top-0 z-30 bg-[#fef9f5] py-2 transition-all sm:py-5 ${headerStyles}`}
     >
       <div className="container mx-auto">
         <div className="flex items-center justify-between">
@@ -32,18 +38,19 @@ export default function Header() {
 
           <div className="flex items-center gap-x-6">
             <Nav
-              containerStyles="hidden items-center gap-x-8 xl:flex"
               linkStyles="relative transition-all hover:text-primary"
+              containerStyles="hidden items-center gap-x-8 xl:flex"
               underlineStyles="absolute bottom-0 h-1 w-full bg-primary"
             />
+
             <ThemeToggler />
 
-            <div className="xl:hidden">
-              <MobileNav />
-            </div>
+            <MobileNav />
           </div>
         </div>
       </div>
     </header>
   );
-}
+};
+
+export default Header;

@@ -14,11 +14,14 @@ export const useScrollProgress = () => {
       }
     };
 
-    const throttledScroll = throttle(updateScrollCompletion, 300);
+    const handleScroll = throttle(updateScrollCompletion, 300);
 
-    window.addEventListener("scroll", throttledScroll);
+    window.addEventListener("scroll", handleScroll);
 
-    return () => window.removeEventListener("scroll", throttledScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      handleScroll.cancel();
+    };
   }, []);
 
   return completion;

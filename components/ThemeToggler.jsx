@@ -17,6 +17,6 @@ const ThemeToggler = () => {
       <MoonIcon className="absolute size-[1.2rem] rotate-90 scale-0 transition-all dark:-rotate-0 dark:-scale-100" />
     </Button>
   );
-}
+};
 
 export default ThemeToggler;

@@ -5,7 +5,24 @@ import {
   RiFacebookFill,
   RiInstagramFill,
 } from "react-icons/ri";
-import { Gem, Blocks, GanttChartSquare } from "lucide-react";
+
+import {
+  Gem,
+  User2,
+  Blocks,
+  MailIcon,
+  Calendar,
+  HomeIcon,
+  PhoneCall,
+  GraduationCap,
+  GanttChartSquare,
+} from "lucide-react";
+
+export const navLinks = [
+  { label: "Home", href: "/" },
+  { label: "My Projects", href: "/projects" },
+  { label: "Contact", href: "/contact" },
+];
 
 export const socialIcons = [
   {
@@ -29,6 +46,84 @@ export const socialIcons = [
     name: <RiTelegramFill />,
   },
 ];
+
+export const heroStatistics = {
+  clients: 6,
+  projects: 10,
+  experience: 12,
+};
+
+export const aboutData = {
+  tabs: [
+    { name: "Personal Info", title: "Unmatched Service Quality" },
+    { name: "Skills", title: "What I Use Frequently" },
+    { name: "Qualifications", title: "My Awesome Journey" },
+  ],
+  personalInfo: [
+    {
+      text: "Konstantin Klymovych",
+      icon: <User2 size={20} />,
+    },
+    {
+      text: "+380937171150",
+      icon: <PhoneCall size={20} />,
+    },
+    {
+      text: "kostya242421@gmail.com",
+      icon: <MailIcon size={20} />,
+    },
+    {
+      text: "Born 12 Apr, 2002",
+      icon: <Calendar size={20} />,
+    },
+    {
+      text: "Computer Science Bachelor",
+      icon: <GraduationCap size={20} />,
+    },
+    {
+      text: "Kyiv, Ukraine",
+      icon: <HomeIcon size={20} />,
+    },
+  ],
+  skills: ["HTML, CSS, JS", "Front-end Development", "React, Next.js"],
+  tools: [
+    {
+      imgSrc: "/about/vscode.svg",
+      alt: "VS Code logo",
+    },
+    {
+      imgSrc: "/about/figma.svg",
+      alt: "Figma logo",
+    },
+    {
+      imgSrc: "/about/notion.svg",
+      alt: "Notion logo",
+    },
+    {
+      imgSrc: "/about/webflow.svg",
+      alt: "Webflow logo",
+    },
+  ],
+  experience: [
+    {
+      company: "Contrabas Promo",
+      role: "Telegram Bot Developer",
+      years: "2021 - 2023",
+    },
+    {
+      company: "Aipro",
+      role: "Frontend Developer",
+      years: "2023 - 2024",
+    },
+  ],
+  education: [
+    {
+      university: "Kyiv Polytechnic Institute",
+      qualification: "Bachelor of Science",
+      years: "2019 - 2023",
+    },
+  ],
+};
 
 export const services = [
   {
@@ -181,5 +276,20 @@ export const reviews = [
     job: "Teacher",
     review:
       "Kastastin has helped me build a logo for my business. He's fast and reliable. Highly recommend his work!",
+  },
+];
+
+export const contactData = [
+  {
+    text: "kostya242421@gmail.com",
+    icon: <MailIcon size={18} className="text-primary" />,
+  },
+  {
+    text: "Kyiv, Ukraine Address",
+    icon: <HomeIcon size={18} className="text-primary" />,
+  },
+  {
+    text: "+380937171150",
+    icon: <PhoneCall size={18} className="text-primary" />,
   },
 ];

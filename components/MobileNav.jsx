@@ -3,25 +3,20 @@
 import { useState } from "react";
 import { AlignJustify } from "lucide-react";
 
-import Nav from "./Nav";
-import Logo from "./Logo";
+import Nav from "@/components/Nav";
+import Logo from "@/components/Logo";
+import { Sheet, SheetContent } from "@/components/ui/sheet";
 import SocialIconsList from "@/components/lists/SocialIconsList";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
-export default function MobileNav() {
+const MobileNav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  function openMenu() {
-    setIsMenuOpen(true);
-  }
-
-  function closeMenu() {
-    setIsMenuOpen(false);
-  }
+  const openMenu = () => setIsMenuOpen(true);
+  const closeMenu = () => setIsMenuOpen(false);
 
   return (
-    <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
-      <AlignJustify onClick={openMenu} className="cursor-pointer" />
+    <Sheet className="xl:hidden" open={isMenuOpen} onOpenChange={setIsMenuOpen}>
+      <AlignJustify className="cursor-pointer" onClick={openMenu} />
 
       <SheetContent>
         <div className="flex h-full flex-col items-center justify-between py-8">
@@ -29,19 +24,21 @@ export default function MobileNav() {
             <Logo onClick={closeMenu} />
 
             <Nav
-              containerStyles="flex flex-col items-center gap-y-6"
               linkStyles="text-2xl"
-              onLink={closeMenu}
+              containerStyles="flex flex-col items-center gap-y-6"
+              onClick={closeMenu}
             />
           </div>
 
           <SocialIconsList
             containerStyles="flex gap-x-4"
             iconStyles="text-2xl transition-all hover:text-primary"
-            onSocialClick={closeMenu}
+            onClick={closeMenu}
           />
         </div>
       </SheetContent>
     </Sheet>
   );
-}
+};
+
+export default MobileNav;

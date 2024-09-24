@@ -3,16 +3,17 @@
 import { useRef } from "react";
 import { User, MailIcon, ArrowRightIcon, MessageSquare } from "lucide-react";
 
-import { Input } from "./ui/input";
-import { Button } from "./ui/button";
-import { Textarea } from "./ui/textarea";
+import { toast } from "@/hooks/useToast";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Textarea } from "@/components/ui/textarea";
 
-export default function Form() {
+const Form = () => {
   const inputNameRef = useRef();
   const inputEmailRef = useRef();
   const inputMessageRef = useRef();
 
-  async function formHandler(e) {
+  const formHandler = async (e) => {
     e.preventDefault();
 
     const name = inputNameRef.current.value;
@@ -29,31 +30,45 @@ export default function Form() {
       const response = await fetch(requestURL);
       const data = await response.json();
 
-      if (!data.ok) throw new Error("Failed to send message");
-      alert("Message successfully sent!");
+      if (!data.ok) {
+        return toast({
+          title: "Error sending message!",
+          description: "Something went wrong. Please try again.",
+          variant: "destructive",
+        });
+      }
 
       // clear the inputs
       inputNameRef.current.value = "";
       inputEmailRef.current.value = "";
       inputMessageRef.current.value = "";
+
+      toast({
+        title: "Message successfully sent!",
+        description: "I will get back to you as soon as possible.",
+      });
     } catch (error) {
-      alert("Error sending message! Please try again.");
+      return toast({
+        title: "Error sending message!",
+        description: "Something went wrong. Please try again.",
+        variant: "destructive",
+      });
     }
-  }
+  };
 
   return (
     <form onSubmit={formHandler} className="flex flex-col gap-y-4">
-      <div className="relative flex items-center">
+      <div className="form-input">
         <Input type="name" placeholder="Name" ref={inputNameRef} required />
         <User size={20} className="absolute right-6" />
       </div>
 
-      <div className="relative flex items-center">
+      <div className="form-input">
         <Input type="email" placeholder="Email" ref={inputEmailRef} required />
         <MailIcon size={20} className="absolute right-6" />
       </div>
 
-      <div className="relative flex items-center">
+      <div className="form-input">
         <Textarea
           placeholder="Type message here..."
           ref={inputMessageRef}
@@ -68,4 +83,6 @@ export default function Form() {
       </Button>
     </form>
   );
-}
+};
+
+export default Form;

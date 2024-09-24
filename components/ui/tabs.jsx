@@ -15,7 +15,7 @@ const TabsList = React.forwardRef(
       "rounded-[30px] p-1 text-muted-foreground dark:md:bg-secondary xl:bg-white mx-auto grid place-content-center dark:border-none";
 
     const variants = {
-      about: "w-full sm:max-w-[520px] sm:grid-cols-3 sm:border",
+      about: "w-full sm:max-w-[520px] sm:grid-cols-3 sm:border mb-12 xl:mb-8",
       projectsPage:
         "mb-12 size-full md:grid-cols-4 md:border lg:max-w-screen-sm",
     };
@@ -61,7 +61,7 @@ const TabsContent = React.forwardRef(({ className, ...props }, ref) => (
   <TabsPrimitive.Content
     ref={ref}
     className={cn(
-      "mt-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+      "mt-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 text-lg",
       className
     )}
     {...props}

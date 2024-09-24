@@ -15,7 +15,7 @@ const ProjectWrapper = ({ project }) => (
           width={247}
           height={250}
           priority
-          className="absolute bottom-0 shadow-2xl"
+          className="absolute bottom-0 h-[250px] w-[247px] shadow-2xl"
         />
 
         {/* Links */}

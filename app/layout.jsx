@@ -2,6 +2,7 @@ import { Outfit } from "next/font/google";
 
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import { Toaster } from "@/components/ui/toaster";
 import ThemeProvider from "@/components/ThemeProvider";
 
 import "./globals.css";
@@ -23,6 +24,7 @@ const RootLayout = ({ children }) => (
         {children}
         <Footer />
       </ThemeProvider>
+      <Toaster />
     </body>
   </html>
 );

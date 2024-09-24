@@ -8,7 +8,7 @@ const ProjectsList = ({ type }) => {
       : projects.filter((project) => project.category === type);
 
   return (
-    <div className="grid w-full grid-cols-1 gap-4 text-lg lg:grid-cols-3 lg:gap-10 xl:mt-8">
+    <div className="grid w-full grid-cols-1 gap-4 text-lg md:grid-cols-2 md:gap-10 lg:grid-cols-3 xl:mt-8">
       {data.map((project) => (
         <ProjectWrapper key={project.link} project={project} />
       ))}
