@@ -7,8 +7,11 @@ import { toast } from "@/hooks/useToast";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
+import { useLanguage } from "@/lang/LanguageContext";
 
 const Form = () => {
+  const { language, translations } = useLanguage();
+
   const inputNameRef = useRef();
   const inputEmailRef = useRef();
   const inputMessageRef = useRef();
@@ -32,8 +35,8 @@ const Form = () => {
 
       if (!data.ok) {
         return toast({
-          title: "Error sending message!",
-          description: "Something went wrong. Please try again.",
+          title: translations[language].toastTitleError,
+          description: translations[language].toastDescriptionError,
           variant: "destructive",
         });
       }
@@ -44,13 +47,13 @@ const Form = () => {
       inputMessageRef.current.value = "";
 
       toast({
-        title: "Message successfully sent!",
-        description: "I will get back to you as soon as possible.",
+        title: translations[language].toastTitleSuccess,
+        description: translations[language].toastDescriptionSuccess,
       });
     } catch (error) {
       return toast({
-        title: "Error sending message!",
-        description: "Something went wrong. Please try again.",
+        title: translations[language].toastTitleError,
+        description: translations[language].toastDescriptionError,
         variant: "destructive",
       });
     }
@@ -59,18 +62,28 @@ const Form = () => {
   return (
     <form onSubmit={formHandler} className="flex flex-col gap-y-4">
       <div className="form-input">
-        <Input type="name" placeholder="Name" ref={inputNameRef} required />
+        <Input
+          type="name"
+          placeholder={translations[language].placeholderName}
+          ref={inputNameRef}
+          required
+        />
         <User size={20} className="absolute right-6" />
       </div>
 
       <div className="form-input">
-        <Input type="email" placeholder="Email" ref={inputEmailRef} required />
+        <Input
+          type="email"
+          placeholder={translations[language].placeholderEmail}
+          ref={inputEmailRef}
+          required
+        />
         <MailIcon size={20} className="absolute right-6" />
       </div>
 
       <div className="form-input">
         <Textarea
-          placeholder="Type message here..."
+          placeholder={translations[language].placeholderMessage}
           ref={inputMessageRef}
           required
         />
@@ -78,7 +91,7 @@ const Form = () => {
       </div>
 
       <Button className="flex max-w-[166px] items-center gap-x-1">
-        Let&apos;s Talk
+        {translations[language].sendFormBtn}
         <ArrowRightIcon size={20} className="ml-2" />
       </Button>
     </form>

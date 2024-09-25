@@ -24,7 +24,7 @@ const Template = ({ children }) => {
       </motion.main>
 
       <span
-        className="fixed inset-y-0 right-0 z-50 w-1.5 bg-primary transition-all duration-700"
+        className="fixed inset-y-0 right-0 z-50 w-1.5 bg-primary transition-all duration-700 max-sm:hidden"
         style={{ transform: `translateY(${completion - 100}%)` }}
       />
     </>

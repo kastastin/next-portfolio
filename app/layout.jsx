@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { Toaster } from "@/components/ui/toaster";
 import ThemeProvider from "@/components/ThemeProvider";
+import { LanguageProvider } from "@/lang/LanguageContext";
 
 import "./globals.css";
 
@@ -19,11 +20,14 @@ export const metadata = {
 const RootLayout = ({ children }) => (
   <html lang="en" suppressHydrationWarning>
     <body className={outfit.className}>
-      <ThemeProvider attribute="class" defaulTheme="light">
-        <Header />
-        {children}
-        <Footer />
-      </ThemeProvider>
+      <LanguageProvider>
+        <ThemeProvider attribute="class" defaulTheme="light">
+          <Header />
+          {children}
+          <Footer />
+        </ThemeProvider>
+      </LanguageProvider>
+
       <Toaster />
     </body>
   </html>

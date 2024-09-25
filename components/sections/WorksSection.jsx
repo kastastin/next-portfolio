@@ -6,49 +6,52 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import { projects } from "@/constants";
 import { Button } from "@/components/ui/button";
+import { useTranslation } from "@/hooks/useTranslation";
 import ProjectWrapper from "@/components/ProjectWrapper";
 
 import "swiper/css";
 import "swiper/css/pagination";
 
-const WorksSection = () => (
-  <section className="relative mb-12 xl:mb-48">
-    <div className="container mx-auto xl:flex xl:justify-between xl:gap-x-5">
-      {/* Text */}
-      <div className="flex-center mx-auto mb-12 max-w-[400px] flex-col text-center xl:mx-0 xl:h-[400px] xl:items-start xl:text-left">
-        <h2 className="section-title-center xl:mx-0 xl:text-left">
-          Latest Projects
-        </h2>
+const WorksSection = () => {
+  const { t } = useTranslation();
 
-        <p className="subtitle mb-8">
-          Dive into a showcase of my recent work and witness the fusion of
-          creativity and expertise.
-        </p>
+  return (
+    <section className="relative mb-12 xl:mb-36">
+      <div className="container mx-auto xl:flex xl:justify-between xl:gap-x-5">
+        {/* Text */}
+        <div className="flex-center mx-auto mb-12 max-w-[400px] flex-col text-center xl:mx-0 xl:h-[400px] xl:items-start xl:text-left">
+          <h2 className="section-title-center xl:mx-0 xl:text-left">
+            {t("projectsTitle")}
+          </h2>
 
-        <Link href="/projects">
-          <Button>All projects</Button>
-        </Link>
+          <p className="subtitle mb-8">{t("projectsText")}</p>
+
+          <Link href="/projects">
+            <Button>{t("projectsBtnAll")}</Button>
+          </Link>
+        </div>
+
+        {/* Slides */}
+        <div className="right-0 top-0 xl:relative xl:max-w-[850px] 2xl:max-w-[1000px]">
+          <Swiper
+            slidesPerView={1}
+            spaceBetween={30}
+            modules={[Pagination]}
+            pagination={{ clickable: true }}
+            breakpoints={{ 640: { slidesPerView: 2 } }}
+            className="!pb-[30px]"
+          >
+            {projects.slice(0, 6).map((project) => (
+              <SwiperSlide key={project.name}>
+                <ProjectWrapper project={project} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+          {/* TODO: check web- uk */}
+        </div>
       </div>
-
-      {/* Slides */}
-      <div className="right-0 top-0 xl:relative xl:max-w-[850px] 2xl:max-w-[1000px]">
-        <Swiper
-          slidesPerView={1}
-          spaceBetween={30}
-          modules={[Pagination]}
-          pagination={{ clickable: true }}
-          breakpoints={{ 640: { slidesPerView: 2 } }}
-          className="!pb-[30px]"
-        >
-          {projects.slice(0, 4).map((project) => (
-            <SwiperSlide key={project.name}>
-              <ProjectWrapper project={project} />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 export default WorksSection;

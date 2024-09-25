@@ -42,9 +42,7 @@ const Header = () => {
               containerStyles="hidden items-center gap-x-8 xl:flex"
               underlineStyles="absolute bottom-0 h-1 w-full bg-primary"
             />
-
             <ThemeToggler />
-
             <MobileNav />
           </div>
         </div>

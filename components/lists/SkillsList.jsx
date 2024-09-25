@@ -1,11 +1,11 @@
 import { aboutData as data } from "@/constants";
 
 const SkillsList = () => (
-  <ul>
+  <ul className="space-y-5 xl:space-y-2">
     {data.skills.map((skill, index) => (
       <li
         key={index}
-        className="mx-auto w-2/4 text-center xl:mx-0 xl:text-left"
+        className="mx-auto text-center xl:mx-0 xl:text-left"
       >
         <span className="font-medium">{skill}</span>
       </li>

@@ -7,6 +7,7 @@ import Nav from "@/components/Nav";
 import Logo from "@/components/Logo";
 import { Sheet, SheetContent } from "@/components/ui/sheet";
 import SocialIconsList from "@/components/lists/SocialIconsList";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 
 const MobileNav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,7 +20,9 @@ const MobileNav = () => {
       <AlignJustify className="cursor-pointer" onClick={openMenu} />
 
       <SheetContent>
-        <div className="flex h-full flex-col items-center justify-between py-8">
+        <LanguageSwitcher className="absolute right-16 top-4 sm:right-[70px] sm:top-7" />
+
+        <div className="flex h-full flex-col items-center justify-between py-12">
           <div className="flex flex-col items-center gap-y-32">
             <Logo onClick={closeMenu} />
 
