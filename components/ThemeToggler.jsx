@@ -10,7 +10,7 @@ const ThemeToggler = () => {
   const buttonHandler = () => setTheme(theme === "dark" ? "light" : "dark");
 
   return (
-    <Button variant="outline" size="icon" className="bg-background">
+    <Button variant="outline" size="icon" className="bg-transparent">
       <label className="toggleTheme" htmlFor="switchTheme">
         <input
           id="switchTheme"

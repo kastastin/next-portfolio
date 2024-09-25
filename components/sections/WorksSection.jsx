@@ -47,7 +47,6 @@ const WorksSection = () => {
               </SwiperSlide>
             ))}
           </Swiper>
-          {/* TODO: check web- uk */}
         </div>
       </div>
     </section>

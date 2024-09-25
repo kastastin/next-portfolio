@@ -8,12 +8,12 @@ import Badge from "@/components/Badge";
 import DevImg from "@/components/DevImg";
 import { Button } from "@/components/ui/button";
 import { heroStatistics as data } from "@/constants";
-import { useTranslation } from "@/hooks/useTranslation";
+import { useLanguage } from "@/lang/LanguageContext";
 import ArrowToAbout from "@/components/ArrowToAbout";
 import SocialIconsList from "@/components/lists/SocialIconsList";
 
 const HeroSection = () => {
-  const { t } = useTranslation();
+  const { language, translations } = useLanguage();
 
   return (
     <section className="min-h-[84vh] bg-hero bg-cover bg-bottom bg-no-repeat py-12 dark:bg-none xl:py-24 xl:pt-12">
@@ -22,28 +22,31 @@ const HeroSection = () => {
           {/* Left side (text) */}
           <div className="mx-auto flex max-w-[600px] flex-col justify-center text-center xl:mx-0 xl:text-left">
             <div className="mb-4 text-sm font-semibold uppercase tracking-[4px] text-primary">
-              {t("webdev")}
+              {translations[language].webdev}
             </div>
 
-            <h1 className="h1 mb-4">{t("hi")}</h1>
+            <h1 className="h1 mb-4">{translations[language].hi}</h1>
 
             <p className="subtitle mx-auto max-w-[490px] xl:mx-0">
-              {t("heroDescription")}
+              {translations[language].heroDescription}
             </p>
 
             {/* Buttons */}
             <div className="mx-auto mb-8 flex flex-col gap-3 md:flex-row xl:mx-0 xl:mb-12">
               <Link href="/contact">
                 <Button className="gap-x-2">
-                  {t("heroBtnContact")}
+                  {translations[language].heroBtnContact}
                   <Send size={18} />
                 </Button>
               </Link>
 
               <Button variant="secondary">
-                <a href="/cv.pdf" download className="flex gap-x-2">
-                  {t("heroBtnResume")}
-                  {/* TODO: add cv */}
+                <a
+                  href={`/cv-${language}.pdf`}
+                  download
+                  className="flex gap-x-2"
+                >
+                  {translations[language].heroBtnResume}
                   <Download size={18} />
                 </a>
               </Button>
@@ -60,21 +63,21 @@ const HeroSection = () => {
             <Badge
               icon={<RiBriefcase4Fill />}
               endCountNum={data.experience}
-              badgeText={t("heroExperience")}
+              badgeText={translations[language].heroExperience}
               containerStyles="absolute -left-[5rem] top-[22.5%]"
             />
 
             <Badge
               icon={<RiTodoFill />}
               endCountNum={data.projects}
-              badgeText={t("heroProjects")}
+              badgeText={translations[language].heroProjects}
               containerStyles="absolute -left-[1rem] top-[80%]"
             />
 
             <Badge
               icon={<RiTeamFill />}
               endCountNum={data.clients}
-              badgeText={t("heroClients")}
+              badgeText={translations[language].heroClients}
               containerStyles="absolute -right-2 top-[2%]"
             />
 

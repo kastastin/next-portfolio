@@ -16,7 +16,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 const ReviewsSection = () => (
-  <section className="mb-12 xl:mb-32 hidden">
+  <section className="mb-12 hidden xl:mb-32">
     <div className="container mx-auto">
       <h2 className="section-title-center">Reviews</h2>
 
