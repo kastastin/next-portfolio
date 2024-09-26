@@ -366,6 +366,39 @@ export const projects = [
       uk: "Статичний вебсайт для продажу книг без логіки взаємодії.",
     },
   },
+  {
+    name: "Bakery",
+    category: "landing page",
+    image: "/work/Bakery.png",
+    link: "https://bakery-concept.netlify.app/",
+    github: "https://github.com/kastastin",
+    description: {
+      en: "Landing page for a bakery with animations.",
+      uk: "Лендінг для пекарні з анімаціями.",
+    },
+  },
+  {
+    name: "Fruits",
+    category: "landing page",
+    image: "/work/Fruit.png",
+    link: "https://fruit-concept.netlify.app/",
+    github: "https://github.com/kastastin",
+    description: {
+      en: "A simple landing page for ordering fruit.",
+      uk: "Простий лендінг для замовлення фруктів.",
+    },
+  },
+  {
+    name: "JBL Headphones",
+    category: "landing page",
+    image: "/work/JBL.png",
+    link: "https://headphones-concept.netlify.app/",
+    github: "https://github.com/kastastin",
+    description: {
+      en: "Landing page with animations to advertise JBL headphones.",
+      uk: "Лендінг з анімаціями для реклами навушників JBL.",
+    },
+  },
 ];
 
 export const reviews = [
